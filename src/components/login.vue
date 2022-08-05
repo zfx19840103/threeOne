@@ -41,11 +41,11 @@ export default {
 			 * 光源设置
 			 */
 			//点光源
-			let point = new THREE.PointLight("red");
-			point.position.set(100, 100, 100); //点光源位置 xyz
+			let point = new THREE.PointLight("green");
+			point.position.set(300, 300, 100); //点光源位置 xyz
 			this.scene.add(point); //点光源添加到场景中
 			//环境光
-			let ambient = new THREE.AmbientLight("black");
+			let ambient = new THREE.AmbientLight("blue");
 			this.scene.add(ambient);
 			// console.log(scene)
 			// console.log(scene.children)
@@ -80,7 +80,7 @@ export default {
 			let render = () => {
 				this.renderer.render(this.scene, this.camera); //执行渲染操作
 				requestAnimationFrame(render); //请求再次执行渲染函数render
-				// this.mesh.rotateY(0.01); //每次绕y轴旋转0.01弧度
+				this.mesh.rotateY(0.01); //每次绕y轴旋转0.01弧度
 			};
 			render();
 			this.controls = new OrbitControls(this.camera, this.renderer.domElement); //创建控件对象
